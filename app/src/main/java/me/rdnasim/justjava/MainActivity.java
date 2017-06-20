@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         String totalQuantity = "Total Item Count : "+ quantity + " coffees";
-        String prizeMessage = "Prize $"+ (quantity * 10);
+        String prizeMessage = "Prize : $"+ (quantity * 10);
         displayTotalCount(totalQuantity);
         displayMessage(prizeMessage);
     }
