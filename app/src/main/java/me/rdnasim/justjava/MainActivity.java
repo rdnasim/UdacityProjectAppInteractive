@@ -7,9 +7,11 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 
+import static android.R.id.message;
+
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 2;
+    int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,16 +20,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        String prizeMessage = "Free";
+        String totalQuantity = "Total Item Count : "+ quantity + " coffees";
+        String prizeMessage = "Prize $"+ (quantity * 10);
+        displayTotalCount(totalQuantity);
         displayMessage(prizeMessage);
-        /*int prizePerCoffee = 10;
-        displayPrize(quantity * prizePerCoffee);*/
     }
 
-    private void displayPrize(int number) {
+    /*private void displayPrize(int number) {
         TextView prizeTextView = (TextView) findViewById(R.id.prize_text_view);
         prizeTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
+    }*/
 
     private void display(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
@@ -46,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.prize_text_view);
         priceTextView.setText(message);
+    }
+    private void displayTotalCount(String totalCount) {
+        TextView priceTextView = (TextView) findViewById(R.id.total_count_coffees);
+        priceTextView.setText(totalCount);
     }
 
 
